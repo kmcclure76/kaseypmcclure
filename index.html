@@ -573,6 +573,115 @@
   .format-item p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; }
   .format-icon { font-size: 2rem; }
 
+  /* RESOURCES */
+  .resources-page { padding: 4rem 5rem 6rem; max-width: 1100px; margin: 0 auto; }
+  .resources-intro { margin-bottom: 3.5rem; }
+  .resources-intro p { font-size: 1.1rem; color: var(--text-light); max-width: 640px; }
+
+  /* RTCF Framework */
+  .rtcf-section { margin-bottom: 5rem; }
+  .rtcf-section h3 { font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .rtcf-section .rtcf-sub { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; }
+  .rtcf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+  .rtcf-card {
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .rtcf-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    border-radius: 12px 12px 0 0;
+  }
+  .rtcf-card.r { background: #EEF3FA; }
+  .rtcf-card.r::before { background: var(--navy); }
+  .rtcf-card.t { background: #E8F0F7; }
+  .rtcf-card.t::before { background: var(--blue); }
+  .rtcf-card.c { background: #F0F5FB; }
+  .rtcf-card.c::before { background: #4A7FAB; }
+  .rtcf-card.f { background: #E5EEF6; }
+  .rtcf-card.f::before { background: #6B9EC4; }
+  .rtcf-letter {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+  }
+  .rtcf-card.r .rtcf-letter { color: var(--navy); }
+  .rtcf-card.t .rtcf-letter { color: var(--blue); }
+  .rtcf-card.c .rtcf-letter { color: #4A7FAB; }
+  .rtcf-card.f .rtcf-letter { color: #6B9EC4; }
+  .rtcf-word { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .rtcf-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+  .rtcf-example {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    color: var(--white);
+  }
+  .rtcf-example h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue-light); margin-bottom: 1rem; }
+  .rtcf-example p { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.85); }
+  .rtcf-example span { color: var(--white); font-weight: 600; }
+
+  /* Resource Cards */
+  .resources-section h3 { font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .resources-section .resources-sub { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; }
+  .resource-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .resource-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .resource-card::after {
+    content: '→';
+    position: absolute;
+    bottom: 1.75rem;
+    right: 2rem;
+    font-size: 1.1rem;
+    color: var(--blue);
+    transition: transform 0.2s;
+  }
+  .resource-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,46,69,0.08); }
+  .resource-card:hover::after { transform: translateX(4px); }
+  .resource-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    width: fit-content;
+  }
+  .resource-tag.ai { background: #E0EAF5; color: var(--navy); }
+  .resource-tag.strategy { background: #E8F4EC; color: #2A6B40; }
+  .resource-tag.activity { background: #FDF0E0; color: #8A5A1A; }
+  .resource-tag.guide { background: #F0E8F5; color: #6A3A8A; }
+  .resource-card h4 { font-size: 1.1rem; color: var(--navy); margin: 0; padding-right: 2rem; }
+  .resource-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0; padding-right: 2rem; }
+
+  @media (max-width: 900px) {
+    .rtcf-grid { grid-template-columns: repeat(2, 1fr); }
+    .resource-cards { grid-template-columns: 1fr; }
+    .resources-page { padding: 3rem 2rem; }
+  }
+  @media (max-width: 500px) {
+    .rtcf-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  }
+
   /* CONTACT */
   .contact-page {
     padding: 4rem 5rem 6rem;
@@ -771,6 +880,7 @@
     <li><a onclick="showPage('about')" data-page="about">About</a></li>
     <li><a onclick="showPage('services')" data-page="services">Services</a></li>
     <li><a onclick="showPage('speaking')" data-page="speaking">Speaking</a></li>
+    <li><a onclick="showPage('resources')" data-page="resources">Resources</a></li>
     <li><a onclick="showPage('contact')" data-page="contact" class="nav-cta">Let's Connect</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()" id="hamburger">
@@ -783,6 +893,7 @@
   <a onclick="showPage('about'); closeMenu()">About</a>
   <a onclick="showPage('services'); closeMenu()">Services</a>
   <a onclick="showPage('speaking'); closeMenu()">Speaking</a>
+  <a onclick="showPage('resources'); closeMenu()">Resources</a>
   <a onclick="showPage('contact'); closeMenu()">Let's Connect</a>
 </div>
 
@@ -900,29 +1011,29 @@
       <div class="service-row">
         <div class="service-row-num">01</div>
         <div class="service-row-body">
-          <h3>People &amp; Organizational Development</h3>
-          <p>Building high-performing teams and cultures through targeted consulting, coaching, and development programs. I help organizations identify what's working, what's not, and design intentional solutions that stick.</p>
-          <ul class="service-bullets"><li>Organizational assessments</li><li>1:1 and team coaching</li><li>Culture and engagement programs</li><li>Development surveys</li><li>Change management support</li></ul>
+          <h3>AI Learning &amp; Productivity Consulting</h3>
+          <p>AI is only as powerful as the people using it. I help teams move beyond the hype and build real, practical AI skills — starting with prompt engineering using the RTCF framework (Role, Task, Context, Format). The result: faster execution, less friction, and more time for high-value work.</p>
+          <ul class="service-bullets"><li>AI readiness assessments</li><li>Prompt engineering training</li><li>RTCF framework workshops</li><li>AI productivity strategy</li><li>Team AI adoption programs</li></ul>
         </div>
-        <div class="service-row-tag">Most Popular</div>
+        <div class="service-row-tag">AI &amp; Innovation</div>
       </div>
       <div class="service-row">
         <div class="service-row-num">02</div>
-        <div class="service-row-body">
-          <h3>Communication &amp; Team Coaching</h3>
-          <p>Poor communication is the root cause of most workplace frustration. I help teams identify the communication gaps that are slowing them down and develop practical skills to work through them — and past them.</p>
-          <ul class="service-bullets"><li>Team assessments</li><li>Communication workshops</li><li>Time management coaching</li><li>Conflict resolution</li></ul>
-        </div>
-        <div class="service-row-tag">Teams</div>
-      </div>
-      <div class="service-row">
-        <div class="service-row-num">03</div>
         <div class="service-row-body">
           <h3>Instructional Design &amp; Course Development</h3>
           <p>Learning experiences that are thoughtfully designed for behavior change, not just knowledge transfer. I develop training programs, eLearning courses, and blended learning solutions grounded in adult learning principles.</p>
           <ul class="service-bullets"><li>eLearning development</li><li>Curriculum design</li><li>Blended learning solutions</li><li>Learning technology consulting</li></ul>
         </div>
         <div class="service-row-tag">L&amp;D</div>
+      </div>
+      <div class="service-row">
+        <div class="service-row-num">03</div>
+        <div class="service-row-body">
+          <h3>Communication &amp; Team Coaching</h3>
+          <p>Poor communication is the root cause of most workplace frustration. I help teams identify the communication gaps that are slowing them down and develop practical skills to work through them — and past them.</p>
+          <ul class="service-bullets"><li>Team assessments</li><li>Communication workshops</li><li>Time management coaching</li><li>Conflict resolution</li></ul>
+        </div>
+        <div class="service-row-tag">Teams</div>
       </div>
       <div class="service-row">
         <div class="service-row-num">04</div>
@@ -936,11 +1047,11 @@
       <div class="service-row">
         <div class="service-row-num">05</div>
         <div class="service-row-body">
-          <h3>AI Learning &amp; Productivity Consulting</h3>
-          <p>AI is only as powerful as the people using it. I help teams move beyond the hype and build real, practical AI skills — starting with prompt engineering using the RTCF framework (Role, Task, Context, Format). The result: faster execution, less friction, and more time for high-value work.</p>
-          <ul class="service-bullets"><li>AI readiness assessments</li><li>Prompt engineering training</li><li>RTCF framework workshops</li><li>AI productivity strategy</li><li>Team AI adoption programs</li></ul>
+          <h3>People &amp; Organizational Development</h3>
+          <p>Building high-performing teams and cultures through targeted consulting, coaching, and development programs. I help organizations identify what's working, what's not, and design intentional solutions that stick.</p>
+          <ul class="service-bullets"><li>Organizational assessments</li><li>1:1 and team coaching</li><li>Culture and engagement programs</li><li>Development surveys</li><li>Change management support</li></ul>
         </div>
-        <div class="service-row-tag">AI &amp; Innovation</div>
+        <div class="service-row-tag">Most Popular</div>
       </div>
     </div>
     <br><br>
@@ -950,7 +1061,85 @@
   </div>
 </div>
 
-<!-- SPEAKING -->
+<!-- RESOURCES -->
+<div class="page" id="page-resources">
+  <div class="page-hero">
+    <div class="page-hero-tag">Resources</div>
+    <h2>Tools to help you<br><em>work smarter.</em></h2>
+  </div>
+  <div class="resources-page">
+    <div class="resources-intro">
+      <p>Frameworks, guides, and interactive tools designed to help you and your team build practical skills — from AI adoption to expert communication.</p>
+    </div>
+
+    <!-- RTCF Framework -->
+    <div class="rtcf-section">
+      <h3>The RTCF Framework</h3>
+      <p class="rtcf-sub">A simple, four-part structure for writing prompts that get results from AI tools.</p>
+      <div class="rtcf-grid">
+        <div class="rtcf-card r">
+          <div class="rtcf-letter">R</div>
+          <div class="rtcf-word">Role</div>
+          <div class="rtcf-desc">Tell the AI who it should be. Assigning a role shapes the tone, vocabulary, and perspective of the response.</div>
+        </div>
+        <div class="rtcf-card t">
+          <div class="rtcf-letter">T</div>
+          <div class="rtcf-word">Task</div>
+          <div class="rtcf-desc">Be specific about what you need. A clear, action-oriented task removes ambiguity and focuses the output.</div>
+        </div>
+        <div class="rtcf-card c">
+          <div class="rtcf-letter">C</div>
+          <div class="rtcf-word">Context</div>
+          <div class="rtcf-desc">Provide the background the AI needs. The more relevant context you give, the more tailored the response.</div>
+        </div>
+        <div class="rtcf-card f">
+          <div class="rtcf-letter">F</div>
+          <div class="rtcf-word">Format</div>
+          <div class="rtcf-desc">Specify how you want the output delivered — bullet points, a summary, a table, a step-by-step guide.</div>
+        </div>
+      </div>
+      <div class="rtcf-example">
+        <h4>Example Prompt Using RTCF</h4>
+        <p>
+          <span>Role:</span> You are an experienced HR consultant. &nbsp;
+          <span>Task:</span> Write a 30-minute onboarding agenda for a new team member's first day. &nbsp;
+          <span>Context:</span> The team is remote, works across two time zones, and uses Slack and Notion as primary tools. &nbsp;
+          <span>Format:</span> Present as a timed schedule with brief notes on the purpose of each block.
+        </p>
+      </div>
+    </div>
+
+    <!-- Resource Cards -->
+    <div class="resources-section">
+      <h3>Free Resources</h3>
+      <p class="resources-sub">Practical tools and guides you can use right now — no sign-up required.</p>
+      <div class="resource-cards">
+        <a href="https://kmcclure76.github.io/ai-framework/" target="_blank" rel="noopener" class="resource-card">
+          <span class="resource-tag ai">AI Tools</span>
+          <h4>AI Tool Selection Framework</h4>
+          <p>A structured scoring matrix to help L&D and OD teams evaluate AI tools with confidence — weighing security, learning science, cost, and ecosystem fit.</p>
+        </a>
+        <a href="https://kmcclure76.github.io/AI-Implementation-Strategy/" target="_blank" rel="noopener" class="resource-card">
+          <span class="resource-tag strategy">Strategy</span>
+          <h4>AI-Accelerated Learning Solutions</h4>
+          <p>A four-stage implementation workflow for instructional designers who want to use AI faster — without sacrificing their expert authority or quality standards.</p>
+        </a>
+        <a href="https://kmcclure76.github.io/Pair-Share/" target="_blank" rel="noopener" class="resource-card">
+          <span class="resource-tag activity">Interactive Activity</span>
+          <h4>Leading with Expert Authority</h4>
+          <p>A timed pair-share activity for conferences and workshops — practice responding to common stakeholder scenarios with confident, evidence-based language.</p>
+        </a>
+        <a href="https://kmcclure76.github.io/80th-Anniversary-Participant-Guide/" target="_blank" rel="noopener" class="resource-card">
+          <span class="resource-tag guide">Participant Guide</span>
+          <h4>80th Anniversary Participant Guide</h4>
+          <p>A participant guide created for a milestone organizational event — an example of Kasey's instructional design and facilitation materials in action.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
 <div class="page" id="page-speaking">
   <div class="page-hero">
     <div class="page-hero-tag">Speaking</div>
@@ -999,29 +1188,14 @@
       </div>
     </div>
     <div class="contact-form">
-      <h4>Send a message</h4>
-      <p class="form-sub">I'll get back to you within 1–2 business days.</p>
-      <div class="form-row">
-        <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" /></div>
-        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" /></div>
+      <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+          src="https://www.canva.com/design/DAHMyVEQDyw/fSkmrV-NcUPxOUxxBj9mOw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
       </div>
-      <div class="form-group"><label>Email</label><input type="email" placeholder="jane@company.com" /></div>
-      <div class="form-group"><label>Organization</label><input type="text" placeholder="Your company or organization" /></div>
-      <div class="form-group">
-        <label>I'm interested in…</label>
-        <select>
-          <option value="">Select a service</option>
-          <option>Leadership Development</option>
-          <option>Communication &amp; Team Coaching</option>
-          <option>Instructional Design</option>
-          <option>Organizational Development</option>
-          <option>AI Learning &amp; Productivity Consulting</option>
-          <option>Speaking / Conference</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="form-group"><label>Message</label><textarea placeholder="Tell me a little about your team and what you're hoping to accomplish…"></textarea></div>
-      <button class="form-submit">Send Message →</button>
+      <p style="font-size: 0.8rem; color: var(--text-light); text-align: right; margin-top: 0.25rem;">
+        <a href="https://www.canva.com/design/DAHMyVEQDyw/fSkmrV-NcUPxOUxxBj9mOw/view?utm_content=DAHMyVEQDyw&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener" style="color: var(--text-light);">Kasey P McClure website form</a> by Kasey McClure
+      </p>
     </div>
   </div>
 </div>
@@ -1033,6 +1207,7 @@
     <a onclick="showPage('about')">About</a>
     <a onclick="showPage('services')">Services</a>
     <a onclick="showPage('speaking')">Speaking</a>
+    <a onclick="showPage('resources')">Resources</a>
     <a onclick="showPage('contact')">Contact</a>
   </div>
   <div class="footer-copy">© 2026 Kasey McClure. All rights reserved.</div>
