@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dominion Energy Learning Day | Kasey McClure</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #F4F6F9;
+    --warm-white: #FAFBFD;
+    --blue: #5577A0;
+    --blue-light: #7A9CBF;
+    --blue-dark: #334E72;
+    --blue-pale: #B8CEDE;
+    --navy: #1E2E45;
+    --slate: #8A9BAD;
+    --silver: #C8CDD4;
+    --silver-light: #E8ECF0;
+    --text: #2A3340;
+    --text-light: #5A6A7A;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Nunito", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue-dark) 100%);
+    padding: 5rem 5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::after {
+    content: "";
+    position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 60px;
+    background: var(--cream);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .page-hero-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-pale);
+    margin-bottom: 0.75rem;
+  }
+  .page-hero h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: white;
+    line-height: 1.2;
+    max-width: 700px;
+  }
+  .page-hero h2 em { font-style: italic; color: var(--blue-pale); }
+
+  .resources-page { padding: 4rem 5rem 6rem; max-width: 1100px; margin: 0 auto; }
+  .resources-intro { margin-bottom: 3.5rem; }
+  .resources-intro p { font-size: 1.1rem; color: var(--text-light); max-width: 640px; }
+
+  .resources-section h3 { font-size: 1.6rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .resources-section .resources-sub { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; }
+  .resource-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .resource-card {
+    background: var(--white);
+    border: 1px solid var(--silver-light);
+    border-radius: 14px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .resource-card::after {
+    content: '→';
+    position: absolute;
+    bottom: 1.75rem;
+    right: 2rem;
+    font-size: 1.1rem;
+    color: var(--blue);
+    transition: transform 0.2s;
+  }
+  .resource-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,46,69,0.08); }
+  .resource-card:hover::after { transform: translateX(4px); }
+
+  .resource-icon {
+    width: 48px; height: 48px;
+    background: rgba(85,119,160,0.1);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .resource-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    width: fit-content;
+  }
+  .resource-tag.model { background: #E0EAF5; color: var(--navy); }
+  .resource-tag.activity { background: #FDF0E0; color: #8A5A1A; }
+  .resource-tag.guide { background: #F0E8F5; color: #6A3A8A; }
+
+  .resource-card h4 { font-size: 1.1rem; color: var(--navy); margin: 0; padding-right: 2rem; }
+  .resource-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin: 0; padding-right: 2rem; }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--silver);
+    padding-bottom: 2px;
+  }
+  .back-link:hover { color: var(--blue); border-color: var(--blue); }
+
+  @media (max-width: 900px) {
+    .page-hero { padding: 3rem 2rem; }
+    .resources-page { padding: 3rem 2rem; }
+    .resource-cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-hero">
+  <div class="page-hero-tag">Private Event Page</div>
+  <h2>Dominion Energy<br><em>Learning Day.</em></h2>
+</div>
+
+<div class="resources-page">
+  <div class="resources-intro">
+    <p>Thanks for spending Learning Day with me! Below are the tools and materials we used together — feel free to revisit them any time.</p>
+  </div>
+
+  <div class="resources-section">
+    <div class="resource-cards">
+
+      <a href="https://kmcclure76.github.io/addie_model/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">🧭</div>
+        <span class="resource-tag model">Model</span>
+        <h4>The ADDIE Model</h4>
+        <p>An interactive walkthrough of the ADDIE instructional design process — Analyze, Design, Develop, Implement, Evaluate.</p>
+      </a>
+
+      <a href="https://kmcclure76.github.io/memorygame/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">🎲</div>
+        <span class="resource-tag activity">Interactive Activity</span>
+        <h4>The Memory Game</h4>
+        <p>A quick, playful memory-matching activity built to reinforce today's key concepts in a fun, low-pressure format.</p>
+      </a>
+
+      <a href="https://kmcclure76.github.io/participant_guide_de/" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">📘</div>
+        <span class="resource-tag guide">Participant Guide</span>
+        <h4>The Participant Guide</h4>
+        <p>Your companion guide for the day — session notes, activities, and reference material to take with you after Learning Day.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <a class="back-link" href="https://kaseypmcclure.com/">← Back to kaseypmcclure.com</a>
+</div>
+
+</body>
+</html>
